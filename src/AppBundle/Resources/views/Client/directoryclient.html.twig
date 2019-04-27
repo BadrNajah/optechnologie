@@ -1,0 +1,122 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Client:Directory{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+                  <div class="op_single_client_page">
+                        <div class="container-fluid left_navbar">
+                              <div class="row left_navbar">
+
+                                    <div class="col-md-2 left_navbar bk_navbar">
+                                          {{ include('AppBundle::Client/menu.html.twig') }}
+                                    </div>
+
+                                    <div class="col-md-10"> 
+
+                                          <div class="stat_client">
+                                                <div class="row">
+                                                      <div class="col-md-3">
+                                                            <div class="block_info client_info">
+                                                                  <h4>{{client.nom }} {{client.prenom }}</h4>
+                                                                  <p>{{client.tel}}</p>
+                                                                  <i class="fa fa-user-circle-o"></i>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-3">
+                                                            <div class="block_info prix_total_info">
+                                                                  <h4>Prix Total</h4>
+                                                                  <p>{{ total_price }} DH</p>
+                                                                  <i class="fa fa-calculator"></i>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-3">
+                                                            <div class="block_info prix_avance_info">
+                                                                  <h4>Avance</h4>
+                                                                  <p> {{ avance }} DH</p>
+                                                                  <i class="fa fa-line-chart"></i>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-3">
+                                                            <div class="block_info prix_rest_info">
+                                                                  <h4>Rest</h4>
+                                                                  <p>{{ total_price - avance }} DH</p>
+                                                                  <i class="fa fa-bar-chart"></i>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div class="op_add_directory">
+                                                <div class="row">
+                                                      <div class="col-md-3">
+                                                            <div class="addirectoryclient monture">
+                                                                  <a href="{{url('addirectoryclient',{id:client.id})}}">Dossier Monture</a>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-3">
+                                                            <div class="addirectoryclient lens">
+                                                                  <a href="{{url('creedossierlentile',{id:client.id})}}">Dossier Lentile</a>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-md-3">
+                                                            <div class="addirectoryclient">
+                                                                  <a href="{{url('historiqueavance',{id:client.id})}}">Historique Avance</a>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          
+                                          <div class="op_directory_info">
+                                                <table class="table table-bordered">
+                                                      <thead>
+                                                            <tr>
+                                                                  <th>Date</th>
+                                                                  <th>Correction</th>
+                                                                  <th>Total</th>
+                                                                  <th colspan = "3">Action</th>
+                                                            </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                            {% for direct in directory %}
+                                                                  <tr>
+                                                                        <td>{{ direct.datePrestation }}</td>
+                                                                        <td>{{ direct.corrOdSph }}({{ direct.corrOdCyl }}){{ direct.corrOdAxe }}Add:{{ direct.corrOdAdd }}//{{ direct.corrOgSph }}({{ direct.corrOgCyl }}){{ direct.corrOgAxe }}Add:{{ direct.corrOgAdd }}</td>
+                                                                        <td>{{ direct.prixVerre + direct.prixMont }}</td>
+                                                                        <td><a href="{{url('editdirectory',{id:direct.id,idclient:client.id})}}" class = "btn btn_edit_color"><i class="fa fa-edit" aria-hidden="true"></i> Modifier</a></td>
+                                                                        <td><a href="{{url('deletedirectoryclient',{id_client:client.id,id_directory:direct.id})}}" class = "btn"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</a></td>
+                                                                        <td><a href="{{url('addavance',{id:direct.id,idir:client.id})}}" 
+                                                                        {% set total = direct.prixVerre + direct.prixMont %}
+                                                                        class = "btn {% for avance_dir in avance_by_dir %} {% if avance_dir.mont_id ==  direct.id and avance_dir.total_avance >= total %} {{ avance_dir.total_avance }} disabled {% endif %}{% endfor %}">
+                                                                        <i class="fa fa-trash" aria-hidden="true"></i> Avance</a></td>
+                                                                  </tr>  
+                                                            {% endfor %}    
+                                                            {% for lent in lentile %}
+                                                                  <tr>
+                                                                        <td>{{ lent.lendate }}</td>
+                                                                        <td>{{ lent.lensOdSph }}({{ lent.lensOdCyl }}){{ lent.lensOdAxe }}{{ lent.lensOdK1 }}{{ lent.lensOdK2 }}//{{ lent.lensOgSph }}({{ lent.lensOgCyl }}){{ lent.lensOgAxe }}{{ lent.lensOgK1 }}{{ lent.lensOgK2 }}</td>
+                                                                        <td>{{ lent.lenprix }}</td>
+                                                                        <td><a href="{{url('editdirectory',{id:lent.id,idclient:client.id})}}" class = "btn btn_edit_color"><i class="fa fa-edit" aria-hidden="true"></i> Modifier</a></td>
+                                                                        <td><a href="{{url('deletedirectoryclient',{id_client:client.id,id_directory:lent.id})}}" class = "btn"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</a></td>
+                                                                        <td><a href="{{url('addavance_lentile',{id:lent.id,idir:client.id})}}" 
+                                                                        {% set total = lent.lenprix %}
+                                                                        class = "btn {% for avance_dir in avance_by_dir %} {% if avance_dir.total_avance >=  total %} disabled {% endif %}{% endfor %}">
+                                                                        <i class="fa fa-trash" aria-hidden="true"></i> Avance</a></td>
+                                                                  </tr>  
+                                                            {% endfor %}
+                                                                           
+                                                      </tbody>
+                                                </table>
+                                          </div>
+
+                                    </div>
+
+                              </div>
+                        </div>
+                  </div>
+		</div>
+      </div>
+
+{% endblock %}

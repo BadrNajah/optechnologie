@@ -1,0 +1,714 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Directory
+ *
+ * @ORM\Table(name="directory")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\DirectoryRepository")
+ */
+class Directory
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_od_sph", type="string", length=255)
+     */
+    private $corrOdSph;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_od_cyl", type="string", length=255)
+     */
+    private $corrOdCyl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_od_axe", type="string", length=255)
+     */
+    private $corrOdAxe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_od_eip", type="string", length=255)
+     */
+    private $corrOdEip;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_od_add", type="string", length=255)
+     */
+    private $corrOdAdd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_og_add", type="string", length=255)
+     */
+    private $corrOgAdd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_od_prisme", type="string", length=255)
+     */
+    private $corrOdPrisme;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_og_prisme", type="string", length=255)
+     */
+    private $corrOgPrisme;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_og_eip", type="string", length=255)
+     */
+    private $corrOgEip;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_og_axe", type="string", length=255)
+     */
+    private $corrOgAxe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_og_cyl", type="string", length=255)
+     */
+    private $corrOgCyl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corr_og_sph", type="string", length=255)
+     */
+    private $corrOgSph;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ref_ment", type="string", length=255 , nullable=true)
+     */
+    private $refMent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ref_verre", type="string", length=255)
+     */
+    private $refVerre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ref_lentil", type="string", length=255)
+     */
+    private $refLentil;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_prest", type="string", length=255)
+     */
+    private $typePrest;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="prix_menture", type="integer")
+     */
+    private $prixMenture;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="prix_verre", type="integer")
+     */
+    private $prixVerre;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="avance_price", type="integer" , nullable=true)
+     */
+    private $avancePrice;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="prix_lentil", type="integer" , nullable=true)
+     */
+    private $prixLentil;
+
+    /**
+     *  @ORM\ManyToOne(targetEntity="Clients", inversedBy="directories")
+     */
+    private $client;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set corrOdSph
+     *
+     * @param string $corrOdSph
+     *
+     * @return Directory
+     */
+    public function setCorrOdSph($corrOdSph)
+    {
+        $this->corrOdSph = $corrOdSph;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOdSph
+     *
+     * @return string
+     */
+    public function getCorrOdSph()
+    {
+        return $this->corrOdSph;
+    }
+
+    /**
+     * Set corrOdCyl
+     *
+     * @param string $corrOdCyl
+     *
+     * @return Directory
+     */
+    public function setCorrOdCyl($corrOdCyl)
+    {
+        $this->corrOdCyl = $corrOdCyl;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOdCyl
+     *
+     * @return string
+     */
+    public function getCorrOdCyl()
+    {
+        return $this->corrOdCyl;
+    }
+
+    /**
+     * Set corrOdAxe
+     *
+     * @param string $corrOdAxe
+     *
+     * @return Directory
+     */
+    public function setCorrOdAxe($corrOdAxe)
+    {
+        $this->corrOdAxe = $corrOdAxe;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOdAxe
+     *
+     * @return string
+     */
+    public function getCorrOdAxe()
+    {
+        return $this->corrOdAxe;
+    }
+
+    /**
+     * Set corrOdEip
+     *
+     * @param string $corrOdEip
+     *
+     * @return Directory
+     */
+    public function setCorrOdEip($corrOdEip)
+    {
+        $this->corrOdEip = $corrOdEip;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOdEip
+     *
+     * @return string
+     */
+    public function getCorrOdEip()
+    {
+        return $this->corrOdEip;
+    }
+
+    /**
+     * Set corrOdPrisme
+     *
+     * @param string $corrOdPrisme
+     *
+     * @return Directory
+     */
+    public function setCorrOdPrisme($corrOdPrisme)
+    {
+        $this->corrOdPrisme = $corrOdPrisme;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOdPrisme
+     *
+     * @return string
+     */
+    public function getCorrOdPrisme()
+    {
+        return $this->corrOdPrisme;
+    }
+
+    /**
+     * Set corrOgPrisme
+     *
+     * @param string $corrOgPrisme
+     *
+     * @return Directory
+     */
+    public function setCorrOgPrisme($corrOgPrisme)
+    {
+        $this->corrOgPrisme = $corrOgPrisme;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOgPrisme
+     *
+     * @return string
+     */
+    public function getCorrOgPrisme()
+    {
+        return $this->corrOgPrisme;
+    }
+
+    /**
+     * Set corrOgEip
+     *
+     * @param string $corrOgEip
+     *
+     * @return Directory
+     */
+    public function setCorrOgEip($corrOgEip)
+    {
+        $this->corrOgEip = $corrOgEip;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOgEip
+     *
+     * @return string
+     */
+    public function getCorrOgEip()
+    {
+        return $this->corrOgEip;
+    }
+
+    /**
+     * Set corrOgAxe
+     *
+     * @param string $corrOgAxe
+     *
+     * @return Directory
+     */
+    public function setCorrOgAxe($corrOgAxe)
+    {
+        $this->corrOgAxe = $corrOgAxe;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOgAxe
+     *
+     * @return string
+     */
+    public function getCorrOgAxe()
+    {
+        return $this->corrOgAxe;
+    }
+
+    /**
+     * Set corrOgCyl
+     *
+     * @param string $corrOgCyl
+     *
+     * @return Directory
+     */
+    public function setCorrOgCyl($corrOgCyl)
+    {
+        $this->corrOgCyl = $corrOgCyl;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOgCyl
+     *
+     * @return string
+     */
+    public function getCorrOgCyl()
+    {
+        return $this->corrOgCyl;
+    }
+
+    /**
+     * Set corrOgSph
+     *
+     * @param string $corrOgSph
+     *
+     * @return Directory
+     */
+    public function setCorrOgSph($corrOgSph)
+    {
+        $this->corrOgSph = $corrOgSph;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOgSph
+     *
+     * @return string
+     */
+    public function getCorrOgSph()
+    {
+        return $this->corrOgSph;
+    }
+
+    /**
+     * Set avancePrice
+     *
+     * @param integer $avancePrice
+     *
+     * @return Directory
+     */
+    public function setAvancePrice($avancePrice)
+    {
+        $this->avancePrice = $avancePrice;
+
+        return $this;
+    }
+
+    /**
+     * Get avancePrice
+     *
+     * @return int
+     */
+    public function getAvancePrice()
+    {
+        return $this->avancePrice;
+    }
+
+    /**
+     * Set refMent
+     *
+     * @param string $refMent
+     *
+     * @return Directory
+     */
+    public function setRefMent($refMent)
+    {
+        $this->refMent = $refMent;
+
+        return $this;
+    }
+
+    /**
+     * Get refMent
+     *
+     * @return string
+     */
+    public function getRefMent()
+    {
+        return $this->refMent;
+    }
+
+    /**
+     * Set refVerre
+     *
+     * @param string $refVerre
+     *
+     * @return Directory
+     */
+    public function setRefVerre($refVerre)
+    {
+        $this->refVerre = $refVerre;
+
+        return $this;
+    }
+
+    /**
+     * Get refVerre
+     *
+     * @return string
+     */
+    public function getRefVerre()
+    {
+        return $this->refVerre;
+    }
+
+    /**
+     * Set prixMenture
+     *
+     * @param integer $prixMenture
+     *
+     * @return Directory
+     */
+    public function setPrixMenture($prixMenture)
+    {
+        $this->prixMenture = $prixMenture;
+
+        return $this;
+    }
+
+    /**
+     * Get prixMenture
+     *
+     * @return integer
+     */
+    public function getPrixMenture()
+    {
+        return $this->prixMenture;
+    }
+
+    /**
+     * Set prixVerre
+     *
+     * @param integer $prixVerre
+     *
+     * @return Directory
+     */
+    public function setPrixVerre($prixVerre)
+    {
+        $this->prixVerre = $prixVerre;
+
+        return $this;
+    }
+
+    /**
+     * Get prixVerre
+     *
+     * @return integer
+     */
+    public function getPrixVerre()
+    {
+        return $this->prixVerre;
+    }
+
+    /**
+     * Set prixLentil
+     *
+     * @param integer $prixLentil
+     *
+     * @return Directory
+     */
+    public function setPrixLentil($prixLentil)
+    {
+        $this->prixLentil = $prixLentil;
+
+        return $this;
+    }
+
+    /**
+     * Get prixLentil
+     *
+     * @return integer
+     */
+    public function getPrixLentil()
+    {
+        return $this->prixLentil;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \AppBundle\Entity\Clients $client
+     *
+     * @return Directory
+     */
+    public function setClient(\AppBundle\Entity\Clients $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \AppBundle\Entity\Clients
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set corrOdAdd
+     *
+     * @param string $corrOdAdd
+     *
+     * @return Directory
+     */
+    public function setCorrOdAdd($corrOdAdd)
+    {
+        $this->corrOdAdd = $corrOdAdd;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOdAdd
+     *
+     * @return string
+     */
+    public function getCorrOdAdd()
+    {
+        return $this->corrOdAdd;
+    }
+
+    /**
+     * Set corrOgAdd
+     *
+     * @param string $corrOgAdd
+     *
+     * @return Directory
+     */
+    public function setCorrOgAdd($corrOgAdd)
+    {
+        $this->corrOgAdd = $corrOgAdd;
+
+        return $this;
+    }
+
+    /**
+     * Get corrOgAdd
+     *
+     * @return string
+     */
+    public function getCorrOgAdd()
+    {
+        return $this->corrOgAdd;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Directory
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+
+    /**
+     * Set refLentil
+     *
+     * @param string $refLentil
+     *
+     * @return Directory
+     */
+    public function setRefLentil($refLentil)
+    {
+        $this->refLentil = $refLentil;
+
+        return $this;
+    }
+
+    /**
+     * Get refLentil
+     *
+     * @return string
+     */
+    public function getRefLentil()
+    {
+        return $this->refLentil;
+    }
+
+    /**
+     * Set typePrest
+     *
+     * @param string $typePrest
+     *
+     * @return Directory
+     */
+    public function setTypePrest($typePrest)
+    {
+        $this->typePrest = $typePrest;
+
+        return $this;
+    }
+
+    /**
+     * Get typePrest
+     *
+     * @return string
+     */
+    public function getTypePrest()
+    {
+        return $this->typePrest;
+    }
+}

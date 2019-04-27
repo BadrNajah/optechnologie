@@ -1,0 +1,18 @@
+<div class="block_menu left_navbar">
+    <div class="block_image">
+        <img src="{{asset('bundles/app/assets/img/logo.png')}}" alt="">
+    </div>
+    <div class="block_link">
+        <ul>
+            <li><a href = "{{ path('list-clients') }}"><i class="fa fa-home"></i> Acceuil</a></li>
+            <li><a href = "{{ path('listappointment') }}"><i class="fa fa-bell-o"></i> Rendez vous</a></li>
+            <li><a href = "{{ path('liststock') }}"><i class="fa fa-cogs"></i> Stock</a></li>
+            <li><a href = "{{ path('statistique') }}"><i class="fa fa-line-chart"></i> Statistique</a></li>
+            <li><a href = "{{ path('list-clients') }}"><i class="fa fa-cog"></i> Parametres</a></li>
+            <li><a href = "{{ path('list-users') }}"><i class="fa fa-users"></i> Utilisateur</a></li>   
+            {% if app.user %}
+            <li><a href = "{{ logout_path('main') }}"><i class="fa fa-power-off"></i> déconnexion</a></li>                               
+            {% endif %}
+        </ul>
+    </div>
+</div>

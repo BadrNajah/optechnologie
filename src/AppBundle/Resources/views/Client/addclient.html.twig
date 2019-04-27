@@ -1,0 +1,56 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Client:create{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+            <div class="vend_page">
+                <div class="container-fluid left_navbar">
+                    <div class="row left_navbar">
+                        <div class="col-md-2 left_navbar bk_navbar">
+                            {{ include('AppBundle::Client/menu.html.twig') }}
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form_insert">
+                                {% for label, messages in app.flashes('danger') %}
+                                    <div class="alert alert-danger">
+                                        {{ messages }}
+                                    </div>
+                                {% endfor %}
+                                <div class="kal"></div>
+                                <h2 class = "title_service">Ajouter Nouveau Client</h2>
+                                <div class="#">
+                                    {{ form_start(form) }}
+                                        <div class="form-group">
+                                            {{ form_label(form.date) }}
+                                            {{ form_widget(form.date) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(form.nom) }}
+                                            {{ form_widget(form.nom) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(form.prenom) }}
+                                            {{ form_widget(form.prenom) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(form.tel) }}
+                                            {{ form_widget(form.tel) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(form.save) }}
+                                            {{ form_widget(form.save) }}
+                                        </div>
+                                    {{ form_end(form) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+    
+{% endblock %}

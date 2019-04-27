@@ -1,0 +1,55 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Stock:AddProduct{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+            <div class="vend_page">
+                <div class="container-fluid left_navbar">
+                    <div class="row left_navbar">
+                        <div class="col-md-2 left_navbar bk_navbar">
+                        
+                            {{ include('AppBundle::Client/menu.html.twig') }}
+
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form_insert">
+                                <h2 class = "title_service">Ajouter Nouveau Produite</h2>
+                                {{ form_start(stock_form) }}
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="">Ref° Produite</label>
+                                            {{ form_widget(stock_form.refproduit) }}
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="">Prix d'Achat</label>
+                                            {{ form_widget(stock_form.prixachat) }}
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="">Prix de Vent</label>
+                                            {{ form_widget(stock_form.prixvente) }}
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="">Qantite</label>
+                                            {{ form_widget(stock_form.qantite) }}
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="">Fournisseur</label>
+                                            {{ form_widget(stock_form.fournisseur) }}
+                                        </div>
+                                    </div>                                    
+
+                                {{ form_end(stock_form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+    
+
+{% endblock %}

@@ -1,0 +1,252 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Monture
+ *
+ * @ORM\Table(name="monture")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MontureRepository")
+ */
+class Monture
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="montsphy", type="string", length=255)
+     */
+    private $montsphy;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="montcyl", type="string", length=255)
+     */
+    private $montcyl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="montaxe", type="string", length=255)
+     */
+    private $montaxe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monteip", type="string", length=255)
+     */
+    private $monteip;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="montadd", type="string", length=255)
+     */
+    private $montadd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="montprisme", type="string", length=255)
+     */
+    private $montprisme;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="montrefverre", type="string", length=255)
+     */
+    private $montrefverre;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set montsphy
+     *
+     * @param string $montsphy
+     *
+     * @return Monture
+     */
+    public function setMontsphy($montsphy)
+    {
+        $this->montsphy = $montsphy;
+
+        return $this;
+    }
+
+    /**
+     * Get montsphy
+     *
+     * @return string
+     */
+    public function getMontsphy()
+    {
+        return $this->montsphy;
+    }
+
+    /**
+     * Set montcyl
+     *
+     * @param string $montcyl
+     *
+     * @return Monture
+     */
+    public function setMontcyl($montcyl)
+    {
+        $this->montcyl = $montcyl;
+
+        return $this;
+    }
+
+    /**
+     * Get montcyl
+     *
+     * @return string
+     */
+    public function getMontcyl()
+    {
+        return $this->montcyl;
+    }
+
+    /**
+     * Set montaxe
+     *
+     * @param string $montaxe
+     *
+     * @return Monture
+     */
+    public function setMontaxe($montaxe)
+    {
+        $this->montaxe = $montaxe;
+
+        return $this;
+    }
+
+    /**
+     * Get montaxe
+     *
+     * @return string
+     */
+    public function getMontaxe()
+    {
+        return $this->montaxe;
+    }
+
+    /**
+     * Set monteip
+     *
+     * @param string $monteip
+     *
+     * @return Monture
+     */
+    public function setMonteip($monteip)
+    {
+        $this->monteip = $monteip;
+
+        return $this;
+    }
+
+    /**
+     * Get monteip
+     *
+     * @return string
+     */
+    public function getMonteip()
+    {
+        return $this->monteip;
+    }
+
+    /**
+     * Set montadd
+     *
+     * @param string $montadd
+     *
+     * @return Monture
+     */
+    public function setMontadd($montadd)
+    {
+        $this->montadd = $montadd;
+
+        return $this;
+    }
+
+    /**
+     * Get montadd
+     *
+     * @return string
+     */
+    public function getMontadd()
+    {
+        return $this->montadd;
+    }
+
+    /**
+     * Set montprisme
+     *
+     * @param string $montprisme
+     *
+     * @return Monture
+     */
+    public function setMontprisme($montprisme)
+    {
+        $this->montprisme = $montprisme;
+
+        return $this;
+    }
+
+    /**
+     * Get montprisme
+     *
+     * @return string
+     */
+    public function getMontprisme()
+    {
+        return $this->montprisme;
+    }
+
+    /**
+     * Set montrefverre
+     *
+     * @param string $montrefverre
+     *
+     * @return Monture
+     */
+    public function setMontrefverre($montrefverre)
+    {
+        $this->montrefverre = $montrefverre;
+
+        return $this;
+    }
+
+    /**
+     * Get montrefverre
+     *
+     * @return string
+     */
+    public function getMontrefverre()
+    {
+        return $this->montrefverre;
+    }
+}
+

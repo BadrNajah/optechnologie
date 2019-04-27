@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <link href="{{asset('bundles/app/assets/css/bootstrap.css')}}" rel="stylesheet">
+
+        <link href="{{asset('bundles/app/assets/css/kalend.css')}}" rel="stylesheet">		
+
+        <link href="{{asset('bundles/app/assets/css/font-awesome.css')}}" rel="stylesheet">
+
+        <link href="{{asset('bundles/app/assets/css/style.css')}}" rel="stylesheet">
+
+        <link href="{{asset('bundles/app/assets/css/responsive.css')}}" rel="stylesheet">
+
+        {% endblock %}
+
+    </head>
+    <body>
+        <!-- SECTION LOADING -->
+         <div class="block_loading_website">
+                    <div class="spinner">
+                        <div class="rect1"></div>
+                        <div class="rect2"></div>
+                        <div class="rect3"></div>
+                        <div class="rect4"></div>
+                        <div class="rect5"></div>
+                    </div>
+                </div>
+
+        {% block body %}
+
+
+            
+        {% endblock %}
+
+        {% block javascripts %}
+		
+	    <script src="{{asset('bundles/app/assets/js/jquery.min.js')}}"></script>
+		
+        <script src="{{asset('bundles/app/assets/js/jquery.fullpage.min.js')}}"></script>
+
+        <script src="{{asset('https://cdn.jsdelivr.net/momentjs/latest/moment.min.js')}}"></script>
+
+        <script src="{{asset('bundles/app/assets/js/kalend.js')}}"></script>
+                
+        <script src="{{asset('bundles/app/assets/js/bootstrap.min.js')}}"></script>
+
+	    <script src="{{asset('bundles/app/assets/js/custom.js')}}"></script>
+
+        <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+
+        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+		
+        {% endblock %}
+
+    </body>
+</html>

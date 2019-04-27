@@ -1,0 +1,100 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Stock:List{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+            <div class="vend_page">
+                <div class="container-fluid left_navbar">
+                    <div class="row left_navbar">
+                        <div class="col-md-2 left_navbar bk_navbar">
+                        
+                            {{ include('AppBundle::Client/menu.html.twig') }}
+
+                        </div>
+                        <div class="col-md-10">
+
+                            <div class="stat_client">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="block_info client_info">
+                                            <h4>Monture</h4>
+                                            <p></p>
+                                            <i class="fa fa-user-circle-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="block_info prix_total_info">
+                                            <h4>Verre</h4>
+                                            <p></p>
+                                            <i class="fa fa-calculator"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="block_info prix_avance_info">
+                                            <h4>Lentil</h4>
+                                            <p></p>
+                                            <i class="fa fa-line-chart"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        
+                            <div class="op_add_client">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a href="{{url('addproduct')}}" class = "btn btn-success">Ajouter Poduite</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" placeholder = "Search" id="search_produite">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="op_deconnect">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="op_client_info">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Ref° Poduite</th>
+                                            <th>Prix d'Achate</th>
+                                            <th>Prix de vente</th>
+                                            <th>Qantité</th>
+                                            <th>Catégories</th>
+                                            <th>Fournisseur</th>
+                                            <th>Date</th>
+                                            <th colspan="2">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id = "table_clients">
+                                        {% for stock in stocklist %}
+                                            <tr>
+                                                <td>{{ stock.refproduit }}</td>
+                                                <td>{{ stock.prixachat }}</td>
+                                                <td>{{ stock.prixvente }}</td>
+                                                <td>{{ stock.qantite }}</td>
+                                                <td>{{ stock.category }}</td>
+                                                <td>{{ stock.fournisseur }}</td>
+                                                <td>{{ stock.date|date("d/m/Y") }}</td>                                                
+                                                <td style = "width:100px;"><a href="{{url('editproduct',{id:stock.id})}}" class = "btn btn_edit_color">Modifier<i class="fa fa-edit" aria-hidden="true"></i></a></td>
+                                                <td style = "width:100px;"><a href="{{url('deleteproduct',{id:stock.id})}}" class = "btn btn_edit_delete">Supprimer <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+    
+{% endblock %}

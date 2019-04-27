@@ -1,0 +1,144 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Optechno{% endblock %}
+
+{% block body %}
+
+<div id="fullpage">
+	<div class="section">
+            <div class="op_single_client_page">
+                  <div class="container-fluid left_navbar">
+                        <div class="row left_navbar">
+                              <div class="col-md-2 left_navbar bk_navbar">
+                                    {{ include('AppBundle::Client/menu.html.twig') }}
+                              </div>
+                              {#
+                              <div class="col-md-10">
+                                    <div class="form_add_directory monture">
+                                          <h2>Ajouter Nouveau Dossier</h2>
+                                          {{ form_start(form) }}
+
+                                          <table class="table table-bordered table-condensed margin_top_tab">
+                                                <tbody>
+                                                      <tr>
+                                                            <th> </th>
+                                                            <th>Sph</th>
+                                                            <th>Cyl</th>
+                                                            <th>Axe</th>
+                                                            <th>EIP</th>
+                                                            <th>Add</th>
+                                                            <th>Prisme</th>
+                                                      </tr>
+                                                      <tr>
+                                                            <td class = "droit">OD</td>
+                                                            <td>{{ form_widget(form.corrOdSph) }}</td>
+                                                            <td>{{ form_widget(form.corrOdCyl) }}</td>
+                                                            <td>{{ form_widget(form.corrOdAxe) }}</td>
+                                                            <td>{{ form_widget(form.corrOdEip) }}</td>
+                                                            <td>{{ form_widget(form.corrOdAdd) }}</td>
+                                                            <td>{{ form_widget(form.corrOdPrisme) }}</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td class = "gauche">OG</td>
+                                                            <td>{{ form_widget(form.corrOgSph) }}</td>
+                                                            <td>{{ form_widget(form.corrOgCyl) }}</td>
+                                                            <td>{{ form_widget(form.corrOgAxe) }}</td>
+                                                            <td>{{ form_widget(form.corrOgEip) }}</td>
+                                                            <td>{{ form_widget(form.corrOgAdd) }}</td>
+                                                            <td>{{ form_widget(form.corrOgPrisme) }}</td>
+                                                      </tr>
+                                                </tbody>
+                                          </table> 
+
+                                          <div class = "hidden">{{ form_widget(form.refMont) }}</div>
+                                          <div class = "hidden">{{ form_widget(form.refVerre) }}</div>
+                                          <div class = "hidden">{{ form_widget(form.prixMont) }}</div>
+                                          <div class = "hidden">{{ form_widget(form.prixVerre) }}</div>
+                                          <div class = "hidden">{{ form_widget(form.datePrestation) }}</div>
+
+
+                                         {{ form_widget(form.save) }}
+
+                                          {{ form_end(form) }} 
+                                    </div>
+                              </div> #}
+
+                              <div class="col-md-10">
+                                    <div class="form_insert monture">
+                                          <h2 class = "title_service">Modifier Dossier</h2>
+                                          {{ form_start(form) }}
+
+                                                <table class="table table-bordered table-condensed">
+                                                      <tbody>
+                                                            <tr>
+                                                                  <th> </th>
+                                                                  <th>Sph</th>
+                                                                  <th>Cyl</th>
+                                                                  <th>Axe</th>
+                                                                  <th>EIP</th>
+                                                                  <th>Add</th>
+                                                                  <th>Prisme</th>
+                                                            </tr>
+                                                            <tr>
+                                                                  <td class = "droit">OD</td>
+                                                                  <td>{{ form_widget(form.corrOdSph) }}</td>
+                                                                  <td>{{ form_widget(form.corrOdCyl) }}</td>
+                                                                  <td>{{ form_widget(form.corrOdAxe) }}</td>
+                                                                  <td>{{ form_widget(form.corrOdEip) }}</td>
+                                                                  <td>{{ form_widget(form.corrOdAdd) }}</td>
+                                                                  <td>{{ form_widget(form.corrOdPrisme) }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                  <td class = "gauche">OG</td>
+                                                                  <td>{{ form_widget(form.corrOgSph) }}</td>
+                                                                  <td>{{ form_widget(form.corrOgCyl) }}</td>
+                                                                  <td>{{ form_widget(form.corrOgAxe) }}</td>
+                                                                  <td>{{ form_widget(form.corrOgEip) }}</td>
+                                                                  <td>{{ form_widget(form.corrOgAdd) }}</td>
+                                                                  <td>{{ form_widget(form.corrOgPrisme) }}</td>
+                                                            </tr>
+                                                      </tbody>
+                                                </table> 
+
+                                                <div class="row hidden">
+                                                      <div class="col-md-6">
+                                                            <label for="">Reference Monture</label>
+                                                            {{ form_widget(form.refMont) }}
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                            <label for="">Reference Verre</label>
+                                                            {{ form_widget(form.refVerre) }}
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                            <label for="">Prix Monture</label>
+                                                            {{ form_widget(form.prixMont) }}
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                            <label for="">Prix Verre</label>
+                                                            {{ form_widget(form.prixVerre) }}
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                            <label for="">Date Creation</label>
+                                                            {{ form_widget(form.datePrestation) }}
+                                                            <div class="kal"></div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                            <label for="">Total</label>
+                                                            <input type="text" class="form-control total">
+                                                      </div>
+
+                                                </div>
+                                                
+                                                {{ form_widget(form.save) }}
+
+                                          {{ form_end(form) }} 
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+	</div>
+</div>
+
+
+{% endblock %}

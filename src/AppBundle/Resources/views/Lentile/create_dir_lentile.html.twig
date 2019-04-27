@@ -1,0 +1,79 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Optechno{% endblock %}
+
+{% block body %}
+
+<div id="fullpage">
+	<div class="section">
+            <div class="op_single_client_page">
+                  <div class="container-fluid left_navbar">
+                        <div class="row left_navbar">
+                              <div class="col-md-2 left_navbar bk_navbar">
+                                    {{ include('AppBundle::Client/menu.html.twig') }}
+                              </div>
+                              <div class="col-md-10">
+
+                                    <div class="form_insert monture">
+                                          <h2 class = "title_service">Ajouter Nouveau Dossier Lentile</h2>
+                                          {{ form_start(form) }}
+
+                                          <table class="table table-bordered table-condensed">
+                                                <tbody>
+                                                      <tr>
+                                                            <th> </th>
+                                                            <th>Sph</th>
+                                                            <th>Cyl</th>
+                                                            <th>Axe</th>
+                                                            <th>K1</th>
+                                                            <th>K2</th>
+                                                      </tr>
+                                                      <tr>
+                                                            <td class = "droit">OD</td>
+                                                            <td>{{ form_widget(form.lensOdSph) }}</td>
+                                                            <td>{{ form_widget(form.lensOdCyl) }}</td>
+                                                            <td>{{ form_widget(form.lensOdAxe) }}</td>
+                                                            <td>{{ form_widget(form.lensOdK1) }}</td>
+                                                            <td>{{ form_widget(form.lensOdK2) }}</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td class = "gauche">OG</td>
+                                                            <td>{{ form_widget(form.lensOgSph) }}</td>
+                                                            <td>{{ form_widget(form.lensOgCyl) }}</td>
+                                                            <td>{{ form_widget(form.lensOgAxe) }}</td>
+                                                            <td>{{ form_widget(form.lensOgK1) }}</td>
+                                                            <td>{{ form_widget(form.lensOgK2) }}</td>
+                                                      </tr>
+                                                </tbody>
+                                          </table> 
+
+                                          <div class="row">
+                                                <div class="col-md-4">
+                                                      <label for="">Reference Lentile</label>
+                                                      {{ form_widget(form.lenref) }}
+                                                </div>
+                                                <div class="col-md-4">
+                                                      <label for="">Prix Lentile</label>
+                                                      {{ form_widget(form.lenprix) }}
+                                                </div>
+                                                <div class="col-md-4">
+                                                      <label for="">Date Creation</label>
+                                                      {{ form_widget(form.lendate) }}
+                                                      <div class="kal"></div>
+                                                </div>
+                                          </div>
+                                                
+                                          {{ form_widget(form.save) }}
+
+                                          {{ form_end(form) }} 
+                                    </div>                                          
+
+                              </div>
+                        </div>
+                  </div>
+            </div>
+	</div>
+</div>
+
+
+{% endblock %}

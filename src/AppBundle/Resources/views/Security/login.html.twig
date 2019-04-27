@@ -1,0 +1,38 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Security:login{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+            <div class="block_form">
+                <form class = "form_login" action="{{ path('login') }}" method="POST">
+                    <img src="{{asset('bundles/app/assets/img/logo.png')}}" width = "45" alt="logo">
+                    <div class="input-group user">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input  type="text"
+                                id = "_username"
+                                class="form-control" 
+                                name="_username" 
+                                placeholder="Nom Utilisateur"
+                                required
+                                >
+                    </div>
+                    <div class="input-group pass">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input  type="password"
+                                id = "_password" 
+                                class="form-control" 
+                                name="_password" 
+                                placeholder="Mote de Pass"
+                                required
+                                >
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+		</div>
+    </div>
+
+{% endblock %}

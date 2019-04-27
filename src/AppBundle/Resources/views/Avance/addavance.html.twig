@@ -1,0 +1,36 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Client:Directory{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+            <div class="op_single_client_page">
+                <div class="container-fluid left_navbar">
+                    <div class="row left_navbar">
+
+                        <div class="col-md-2 left_navbar bk_navbar">
+                            {{ include('AppBundle::Client/menu.html.twig') }}
+                        </div>
+
+                        <div class="col-md-10"> 
+                            <div class="form_insert avance_block">
+                                <div class="kal"></div>
+                                <h2 class = "title_service">Ajouter Avance</h2>
+                                {{ form_start(form) }}
+                                    {{ form_label(form.dateAvance) }}
+                                    {{ form_widget(form.dateAvance) }}
+                                    {{ form_label(form.avance) }}
+                                    {{ form_widget(form.avance) }}
+                                    {{ form_widget(form.save) }}
+                                {{ form_end(form) }} 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+      </div>
+
+{% endblock %}

@@ -1,0 +1,1133 @@
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../font/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Semibold';
+    src: url('../font/OpenSans-Semibold.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../font/OpenSans-Bold.ttf');
+}
+
+body{
+    font-family: 'OpenSans-Regular';
+    letter-spacing: 0.060em;
+    font-weight: normal !important;
+    background-color: #eceff4;
+}
+
+
+.fa{
+    margin-left: 5px;
+}
+
+.btn_display_color{
+    background-color:#007bff !important;
+    border-color: #007bff !important;
+
+}
+
+.btn{
+    outline: none;
+}
+
+.title_service{
+    margin-bottom: 35px;
+    margin-top: 0;
+    font-family: 'OpenSans-Bold';
+}
+
+.form_insert{
+    padding: 35px 5vh;
+    width: 75%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin-top: 10vh;
+    position: relative;
+}
+
+.form_insert .form-control{
+    height:40px;
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+
+.form_insert textarea.form-control{
+    height:120px;
+}
+
+
+
+.form_insert .table tr td .form-control{
+    margin-bottom:0;
+}
+
+.form_insert .btn{
+    color: #fff;
+    background-color: #129f31;
+    border-color: #129f31;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    padding: 12px 30px;
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.btn_color{
+    color: #fff !important;
+    background-color: #129f31 !important;
+    border-color: #129f31 !important;
+}
+
+label,th{
+    font-weight:normal !important;
+}
+
+.table-condensed > thead > tr > th, 
+.table-condensed > tbody > tr > th, 
+.table-condensed > tfoot > tr > th, 
+.table-condensed > thead > tr > td, 
+.table-condensed > tbody > tr > td, 
+.table-condensed > tfoot > tr > td {
+    padding: 8px;
+}
+
+.block_loading_website {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: 30;
+    z-index: 999;
+}
+
+
+.spinner {
+    margin: 0px auto;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+}
+  
+.spinner > div {
+    background-color: #ffffff;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+  
+.spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+  
+.spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+  
+.spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+  
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+  
+@-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+    20% { -webkit-transform: scaleY(1.0) }
+}
+  
+@keyframes sk-stretchdelay {
+    0%, 40%, 100% { 
+      transform: scaleY(0.4);
+      -webkit-transform: scaleY(0.4);
+    }  20% { 
+      transform: scaleY(1.0);
+      -webkit-transform: scaleY(1.0);
+    }
+}
+
+.alert-success{
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.vend_page .op_add_client,
+.vend_page .op_client_info{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.get_date{
+    cursor: pointer;
+}
+
+.k-selected.k-in-month.k-active{
+    color: #007bff !important;
+}
+
+/*start home page style*/
+
+.home_page,.block_form{
+    height: 100%;
+    background: #eceff4;
+}
+.form_login{
+    width: 30%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    /* border: 1px solid red; */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    border-radius: 10px;
+    padding: 50px 0;
+}
+.home_page img,
+.block_form img{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    padding-top: 8%;
+}
+.block_form img{
+    padding-bottom: 35px;
+    padding-top: 0 !important;
+}
+.home_page a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    border: 1px solid;
+    width: 22%;
+    padding: 8px 0;
+    margin: 0 auto;
+    margin-top: 6%;
+    font-size: 25px;
+    letter-spacing: 0.060em;
+    font-family: 'Raleway-Regular';
+    position: relative;
+    transition: color 0.5s ease;
+}
+
+.home_page a:last-child{
+    margin-top: 2%;
+}
+
+.home_page .op_vend::after,
+.home_page .op_optic::after{
+    top: 0;
+    right: 0;
+    width: 25%;
+    z-index: 999;
+    height: 90px;
+    content: "\f090";
+    text-align: center;
+    position: absolute;
+    text-rendering: auto;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font: normal normal normal 24px/50px FontAwesome;    
+}
+
+.home_page .op_vend:hover,
+.home_page .op_optic:hover{
+    border-color: #fece24;
+    color: #fece24;
+}
+
+.block_form form .input-group{
+    width:70%;
+    margin: 0 auto;
+}
+.block_form form .input-group .form-control{
+    height: 45px;
+    border-radius: 0;
+}
+.block_form form .input-group.pass{
+    margin-top: 3%;
+}
+
+.block_form  .input-group-addon {
+    color: #000000;
+    background-color: #fff;
+    padding: 6px 15px;
+}
+.block_form .btn{
+    margin: 0 auto;
+    display: block;
+    margin-top: 3%;
+    width: 70%;
+    border-radius: 0;
+    background-color: #00abea;
+    border-color: #00abea;
+    color: #fff;
+    padding: 8px 12px;
+    position: relative;
+    font-size: 18px;
+}
+.block_form .btn::after{
+    top: 0;
+    right: 0;
+    width: 25%;
+    z-index: 999;
+    height: 45px;
+    content: "\f090";
+    text-align: center;
+    position: absolute;
+    text-rendering: auto;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font: normal normal normal 24px/45px FontAwesome;
+}
+
+.vend_page .op_client_info table > thead:first-child > tr:first-child > th,
+.op_single_client_page .op_directory_info table > thead:first-child > tr:first-child > th
+{
+    background-color: #eceff4;
+    color: #000;
+    text-align: center;
+    font-weight: normal;
+    font-family: 'OpenSans-Semibold';
+}
+
+.vend_page .op_client_info table,
+.op_single_client_page .op_directory_info table{
+    text-align: center;
+    background-color: white;
+}
+
+.vend_page .op_client_info table tr td{
+    padding: 5px;
+}
+
+.vend_page  .op_add_client a,
+.op_single_client_page .op_add_directory a{
+    text-decoration: none;
+    padding: 8px 0px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 0;
+    border: none;
+    letter-spacing: 0.060em;
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.vend_page  .op_add_client .form-control,
+.op_single_client_page .op_add_directory .form-control{
+    border-radius: 0;
+    height: 42px;
+    width: 70%;
+    border-radius: 42px
+}
+.op_single_client_page .op_add_directory .form-control{
+    width: 100%;
+}
+.vend_page  .op_add_client{
+    padding: 30px 0;
+}
+.vend_page  .op_add_client a::after,
+.op_single_client_page .op_add_directory a::after{
+    top: 0;
+    right: 0;
+    width: 25%;
+    z-index: 999;
+    height: 90px;
+    content: "\f067";
+    text-align: center;
+    position: absolute;
+    text-rendering: auto;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font: normal normal normal 18px/45px FontAwesome;
+}
+
+.vend_page  .op_client_info table a,
+.op_single_client_page .op_directory_info a{
+    font-size: 12px;
+    padding: 4px 0px;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.btn_edit_color{
+    background-color: #ea6516  !important;
+    border-color: #ea6516 !important;
+}
+.vend_page  .op_client_info table a,
+.op_single_client_page .op_directory_info a{
+    background-color: #e62424;
+    border-color: #e62424;
+}
+.vend_page{
+    height: 100%;
+}
+.vend_page  .op_client_info{
+    overflow-y: auto;
+    overflow: hidden;
+}
+.vend_page  .op_client_info::-webkit-scrollbar {
+    width: 0.4em;
+}
+ 
+.vend_page  .op_client_info::-webkit-scrollbar-track {
+    background-color: #000;
+}
+ 
+.vend_page  .op_client_info::-webkit-scrollbar-thumb {
+  background-color: #24c6dc;
+  outline: 1px solid #24c6dc;
+}
+
+#addclient .modal-body{
+    padding: 25px 120px 50px;
+}
+#newdirectory .modal-body{
+    padding: 15px 40px;
+}
+#addclient .modal-body .form-group .form-control,
+#newdirectory .modal-body .form-group .form-control
+{
+    border-radius: 0;
+    border-color: #000;
+}
+#newdirectory .modal-header .modal-title{
+    padding-left: 40px;
+}
+#addclient .modal-body .form-group .form-control[readonly],
+#newdirectory .modal-body .form-group .form-control[readonly]{
+    background-color: #000;
+    opacity: 1;
+    color: #fff;
+}
+
+
+#addclient .modal-body .btn,
+#newdirectory .modal-body .btn{
+    padding: 7px 35px;
+    border-radius: 0;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: #fff;
+    font-size: 18px;
+}
+#addclient .modal-content,
+#newdirectory .modal-content{
+    border-radius: 2px;
+}
+#addclient .modal-content .modal-header,
+#newdirectory .modal-content .modal-header{
+    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+}
+#newdirectory .modal-content .media-body{
+    padding-top: 12px;
+}
+
+#addclient .modal-content .close,
+#newdirectory .modal-content .close
+{
+    opacity: 1;
+}
+#newdirectory .form_add_client .media-left img{
+    border-radius: 50%;
+}
+#newdirectory .form_add_client .nav-tabs > li{
+    width: 50%;
+}
+
+.block_info{
+    text-align: right;
+    padding: 15px;
+    background: #fff;
+    color: #001;
+    border-radius: 0px;
+}
+
+.block_info i{
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    border-radius: 50%;
+    text-align: center;
+    /* border-radius: 2px; */
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    color: #fff;
+    font-size: 25px;
+    box-shadow: 0 0px 20px rgba(0,0,0,.1);
+}
+
+.block_info h4{
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+    text-transform: capitalize;
+}
+
+.stat_client .client_info i{
+    background-color: #007bff;
+}
+
+.stat_client .prix_total_info i{
+    background-color: #28a745;
+}
+
+.stat_client .prix_avance_info i{
+    background-color: #dc3545;
+}
+
+.stat_client .prix_rest_info i{
+    background-color: #17a2b8;
+}
+
+.block_info p{
+    font-size: 20px;
+    color: #000000;
+    font-weight: normal;
+    font-family: 'OpenSans-Regular';
+    font-family: 'OpenSans-Bold';
+}
+
+.monture .table tr td{
+    padding: 0;
+}
+.monture .table .droit,
+.monture .table .gauche{
+    padding: 0 15px;
+    padding-top: 8px;
+}
+.monture .table tr td .form-control{
+    border-color:#fff;
+    border-radius: 0px;
+}
+
+.op_single_client_page{
+    height: 100%;
+}
+.op_single_client_page .well{
+    background-color: #eaeaea;
+    border-color: #eaeaea;
+    border-radius: 0;
+    padding: 25px 15px;
+    font-size: 37px;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+}
+.op_single_client_page .op_directory_info{
+    width: 95%;
+    margin: 0 auto;
+}
+.op_single_client_page .op_add_directory a{
+    border-color: #ff7900;
+    background-color: #ff7900;
+}
+.op_deconnect ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+.op_deconnect ul li{
+    display: inline-block;
+}
+
+.op_deconnect ul li a {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+
+.op_deconnect ul li .home_link{
+    position: relative;
+}
+
+/*end home page style*/
+
+/* BLOC MENU */
+
+.stat_client,.item_date{
+    padding: 30px 0px;
+    width: 95%;
+    margin: 0 auto;
+}
+.item_date{
+    padding-top: 0;
+}
+.item_date .form-control{
+    height: 50px;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    font-family: 'OpenSans-Semibold';
+    border-radius:0;
+    cursor: pointer;
+}
+.item_date .btn_comp{
+    border: none;
+    background: #28a745;
+    color: #fff;
+    border-radius: 0;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    width: 100%;
+    font-family: 'OpenSans-Semibold';
+}
+.op_add_directory{
+    padding-bottom: 30px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.stat_client .media{
+    background-color: #FAFAFA;
+    border: 1px solid #dee2e6!important;
+}
+
+.stat_client .media-left{
+    padding: 20px;
+}
+
+.stat_client .media-left.primary{
+    padding: 20px 25.5px;
+    background-color: #007bff;
+}
+
+.stat_client .media-left.succes{
+    background-color: #28a745;
+    padding: 20px 28.5px;
+}
+
+.stat_client .media-left.avance{
+    background-color: #dc3545;
+}
+
+.stat_client .media-left.rest{
+    background-color: #17a2b8;
+}
+
+
+.stat_client .media-left i{
+    color: #ffffff;
+}
+
+.stat_client .media-body{
+    padding:12px;
+}
+
+.left_navbar{
+    height: 100%;
+}
+
+.bk_navbar{
+    background-color: #1a1a1a;
+}
+
+.block_image img{
+    width: 160px;
+    margin: 0 auto;
+    display: block;
+    padding: 50px 0;
+}
+
+.block_link ul{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.block_link ul li{
+    margin: 12px 0;
+    font-size: 14px;
+    padding: 10px 0;
+    padding-left: 35px;
+}
+
+.block_link ul li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.block_add_client,
+.block_add_product{
+    padding-top: 5vh;
+    width: 50%;
+    MARGIN: 0 auto;
+}
+.block_add_client h4,
+.block_add_product h4{
+    font-size: 40px;
+    margin-bottom: 5vh;
+    letter-spacing: 0.070em;
+    text-align: center;
+}
+.block_add_client .form-control,
+.block_add_product .form-control{
+    height: 40px;
+    border-radius:0;
+}
+.block_add_client .btn{
+    background-color: #28a745;
+    border-color: #28a745;
+    color:#ffffff;
+    padding: 8px 40px;
+    font-size: 14px;
+    letter-spacing: 0.050em;
+}
+
+.form_add_directory{
+    padding: 70px 0vh;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.margin_top_tab{
+    margin-top: 10vh;
+}
+
+.block_appointement{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.block_appointement #table_appointement{
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.block_appointement #table_appointement .btn{
+    padding: 5px 10px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    line-height: 15px;
+}
+
+.block_appointement .appointement .appointement_item a{
+    text-decoration: none;
+    padding: 8px 0px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 0;
+    border: none;
+    letter-spacing: 0.060em;
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: #F3B61F;
+}
+
+.block_appointement .appointement #apointement_client{
+    border-radius: 0;
+    height: 40px;
+    width: 100%;
+    outline: none;
+}
+
+.appointement{
+    margin: 25px 0;
+}
+
+.appoint_tab .well{
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    box-shadow:none;
+    border-radius: 0;
+}
+
+.appoint_tab .well i{
+    font-family: 'OpenSans-Semibold';
+    margin: 0 10px;
+    color: #856404;
+}
+
+.appoint_tab .well.apptoday{
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #000000;
+}
+
+.appoint_tab .well.apptoday i{
+    color: #856404;
+}
+
+.block_add_appoint{
+    width:80%;
+    margin: 0 auto;
+}
+
+.block_add_appoint label{
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-weight:normal;
+    font-family: 'OpenSans-Semibold';
+}
+
+.block_add_appoint .form-control{
+    height: 45px;
+    border-radius: 0px;
+}
+
+.block_add_appoint textarea.form-control{
+    height:148px;
+}
+
+.block_add_appoint .btn{
+    margin-top: 25px;
+    border-radius: 0;
+    width: 30%;
+    padding: 10px 12px;
+    font-size: 16px;
+}
+
+.block_add_appoint form{
+    margin-top:30px;
+}
+
+
+
+
+/**/
+
+/**/
+
+.kal .kalendae{
+    /*display: none;*/
+}
+
+
+.block_book_items #kalend_rooms .kalendae .k-days span{
+    height: 24px;
+}
+
+
+.kal .kalendae{
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    border-radius: 0;
+    z-index: 20;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    padding: 4.5%;
+    display: none;
+}
+
+.kal .kalendae .k-calendar,
+.kal .kalendae .k-title,
+.kal .kalendae .k-days,
+.kal .kalendae .k-header{
+    width: 100%;
+}
+
+.kal .kalendae .k-header{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.kal .kalendae .k-days span{
+    width: 13.5%;
+    height: 9vh;
+    border-radius: 0;
+    line-height: 34px;
+    padding: 0;
+    text-align: center;
+    background-color: #D1D2D2;
+    font-size: 14px;
+    border: none;
+}
+
+.kal .kalendae .k-days span.k-out-of-month{
+    visibility: hidden;
+}
+
+.kal .kalendae .k-days span.k-in-month{
+    background-color: transparent;
+    color: #415054;
+    opacity: .3;
+}
+
+.kal .kalendae .k-days span.k-in-month.k-active{
+    background-color: transparent;
+    color: #415054;
+    opacity: 1;
+}
+
+.kal .kalendae .k-header span{
+    width: 13.5%;
+    color: #000;
+    font-size: 12px;
+}
+
+.kal .kalendae .k-caption {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.avance_block .kal .kalendae{
+    width: 40%;
+    left: auto;
+    padding: 25px;
+}
+
+.avance_block .kal .kalendae .k-days span {
+    width: 13.5%;
+    height: 5.7vh;
+}
+
+#newColumnChart{
+    padding: 0px 0px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+
+/*.holder_dates #datesCheck .kalendae{
+    bottom: 0;
+    top: 0;
+    width: 100%;
+}
+
+.block_book_now #kalend_home .kalendae{
+    width: 316px;
+}
+
+.holder_dates #datesCheck .kalendae .k-calendar,
+.holder_dates #datesCheck .kalendae .k-title,
+.holder_dates #datesCheck .kalendae .k-days,
+.holder_dates #datesCheck .kalendae .k-header{
+    width: 100%;
+}
+
+.holder_dates #datesCheck .kalendae .k-title,
+.holder_dates #datesCheck .kalendae .k-header,
+.holder_dates #datesCheck .kalendae .k-days,
+.block_book_now #kalend_home .kalendae .k-title,
+.block_book_now #kalend_home .kalendae .k-header,
+.block_book_now #kalend_home .kalendae .k-days
+{
+    width: 93%;
+    margin: 0 auto;
+}
+
+.holder_dates #datesCheck .kalendae .k-header{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.holder_dates #datesCheck .kalendae .k-header span,
+.holder_dates #datesCheck .kalendae .k-days span{
+    width: 35px !important;
+}
+
+.block_book_items #kalend_rooms .kalendae .k-days,
+.block_book_items #kalend_rooms .kalendae .k-header,
+.block_book_items #kalend_rooms .kalendae .k-title,
+.block_book_now #kalend_home .kalendae .k-days,
+.block_book_now #kalend_home .kalendae .k-header,
+.block_book_now #kalend_home .kalendae .k-title{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.holder_dates #datesCheck .kalendae .k-days span,
+.block_book_items #kalend_rooms .kalendae .k-days span,
+.block_book_now #kalend_home .kalendae .k-days span{
+    width: 35px;
+    height: 25px;
+    border-radius: 0;
+    line-height: 25px;
+    padding: 0;
+    text-align: center;
+    background-color: #D1D2D2;
+    font-size: 14px;
+    border: none;
+}
+
+.block_book_items #kalend_rooms .kalendae .k-days span{
+    height: 25px !important;
+    line-height: 25px !important;
+    margin: 1px 0 2px 0 !important;
+}
+
+.holder_dates #datesCheck .kalendae .k-days span{
+    height: 30px;
+    line-height: 30px;
+    width: 37px !important;
+}
+
+.holder_dates #datesCheck .kalendae .k-title,
+.block_book_items #kalend_rooms .kalendae .k-title,
+.block_book_now #kalend_home .kalendae .k-title{
+    height: 30px;
+}
+
+.holder_dates #datesCheck .kalendae .k-caption,
+.block_book_items #kalend_rooms .kalendae .k-caption,
+.block_book_now #kalend_home .kalendae .k-caption{
+    font-size: 18px;
+    color: #485B62;
+    line-height: 30px;
+    font-family: 'Raleway-SemiBold';
+}
+
+.holder_dates #datesCheck .kalendae .k-header span,
+.block_book_items #kalend_rooms .kalendae .k-header span,
+.block_book_now #kalend_home .kalendae .k-header span{
+    text-align: center;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #616B75;
+}
+
+.holder_dates #datesCheck .kalendae .k-days span.k-out-of-month,
+.block_book_items #kalend_rooms .kalendae .k-days span.k-out-of-month,
+.block_book_now #kalend_home .kalendae .k-days span.k-out-of-month{
+    visibility: hidden;
+}
+
+.holder_dates #datesCheck .kalendae .k-days span.k-in-month,
+.block_book_items #kalend_rooms .kalendae .k-days span.k-in-month,
+.block_book_now #kalend_home .kalendae .k-days span.k-in-month{
+    background-color: transparent;
+    color: #E5C2AF;
+}
+
+.holder_dates #datesCheck .kalendae .k-days span.k-in-month.k-active,
+.block_book_items #kalend_rooms .kalendae .k-days span.k-in-month.k-active,
+.block_book_now #kalend_home .kalendae .k-days span.k-in-month.k-active{
+    background-color: transparent;
+    color: #415054;
+
+}
+
+.block_book_items #kalend_rooms .kalendae .k-days span.k-in-month.k-range-start,
+.block_book_items #kalend_rooms .kalendae .k-days span.k-in-month.k-range-end{
+    border-radius: 50%;
+}
+
+.block_book_now .kalendae .k-days span,
+ #datesCheck .kalendae .k-days span{
+    margin: 1px 0px 2px 0px !important;
+}
+
+
+.block_book_items #kalend_rooms .kalendae .k-days span.k-in-month.k-range,
+.block_book_now #kalend_home .kalendae .k-days span.k-range{
+    border-radius: 0;
+}
+
+#datesCheck .kalendae .k-days span.k-in-month.k-range-start,
+.block_book_items #kalend_rooms .kalendae .k-days span.k-in-month.k-range-start,
+.block_book_now #kalend_home .kalendae .k-days span.k-range-start{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #E5C2AF !important;
+    color: #ffffff !important;
+}
+
+#datesCheck .kalendae .k-days span.k-in-month.k-range-end,
+.block_book_items #kalend_rooms .kalendae .k-days span.k-in-month.k-range-end,
+.block_book_now #kalend_home .kalendae .k-days span.k-range-end{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #E5C2AF !important;
+    color: #ffffff !important;
+}
+
+
+.holder_dates #datesCheck .kalendae .k-days span.k-range-start,
+.holder_dates #datesCheck .kalendae .k-days span.k-range,
+.holder_dates #datesCheck .kalendae .k-days span.k-range-end,
+.block_book_items #kalend_rooms .kalendae .k-days span.k-range-start,
+.block_book_items #kalend_rooms .kalendae .k-days span.k-range,
+.block_book_items #kalend_rooms .kalendae .k-days span.k-range-end,
+.block_book_now #kalend_home .kalendae .k-days span.k-range-start,
+.block_book_now #kalend_home .kalendae .k-days span.k-range,
+.block_book_now #kalend_home .kalendae .k-days span.k-range-end{
+    background-color: #E5C2AF !important;
+    color: #ffffff !important;
+}
+
+.holder_dates #datesCheck .kalendae .k-today,
+.block_book_items #kalend_rooms .kalendae .k-today,
+.block_book_now #kalend_home .kalendae .k-today{
+    text-decoration: none;
+}
+
+.holder_dates #datesCheck .kalendae .k-btn-next-month,
+.block_book_items #kalend_rooms .kalendae .k-btn-next-month,
+.block_book_now #kalend_home .kalendae .k-btn-next-month{
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/svg/Small_Scrool_Right.svg);
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    margin-right: 0px;
+    margin-top: 10px;
+    color: transparent;
+}
+
+.holder_dates #datesCheck .kalendae .k-btn-previous-month,
+.block_book_items #kalend_rooms .kalendae .k-btn-previous-month,
+.block_book_now #kalend_home .kalendae .k-btn-previous-month{
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/svg/Small_Scrool_Left.svg);
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    margin-left: -8px;
+    margin-top: 10px;
+    color: transparent;
+}
+
+*/

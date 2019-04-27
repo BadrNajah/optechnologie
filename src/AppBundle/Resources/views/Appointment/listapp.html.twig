@@ -1,0 +1,48 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Stock:AddAppointment{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+            <div class="vend_page">
+                <div class="container-fluid left_navbar">
+                    <div class="row left_navbar">
+                        <div class="col-md-2 left_navbar bk_navbar">
+                        
+                            {{ include('AppBundle::Client/menu.html.twig') }}
+
+                        </div>
+                        <div class="col-md-10 left_navbar">
+                            <div class="block_appointement left_navbar">
+                                <div class="appointement">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="appointement_item">
+                                                <a href="{{url('addappointment')}}">Créer Rendez vous</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" placeholder = "Recherche" id="apointement_client">
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ notifrendezvous }}
+                                <div class="appoint_tab">
+                                    {% for appoint in appointment %}
+                                        {% set d1 = "now"|date("m/d/Y") %}
+                                        {% set d2 = appoint.date %}
+                                        <div class="well {% if d1 == d2 %} apptoday {% endif %}" >{{ appoint.client }} <i>{{ appoint.date  }}</i>  {{ appoint.Commentaire }}</div>
+                                    {% endfor %}
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+    
+
+{% endblock %}

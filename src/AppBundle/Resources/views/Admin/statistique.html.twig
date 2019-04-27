@@ -1,0 +1,114 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+	<div id="fullpage">
+		<div class="section">
+            <div class="vend_page">
+                <div class="container-fluid left_navbar">
+                    <div class="row left_navbar">
+
+                        <div class="col-md-2 left_navbar bk_navbar">
+                        
+                            {{ include('AppBundle::Client/menu.html.twig') }}
+
+                        </div>
+                        <div class="col-md-10">
+                            <div class = "stat_client">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="block_info client_info">
+                                            <h4>Nombre Clients</h4>
+                                            <p>{{nbrclients}}</p>
+                                            <i class="fa fa-user-circle-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="block_info prix_total_info">
+                                            <h4>Prix Total</h4>
+                                            <p>{{sumTotal}} DH</p>
+                                            <i class="fa fa-calculator"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="block_info prix_avance_info">
+                                            <h4>Avance</h4>
+                                            <p>{{sumAvance}} DH</p>
+                                            <i class="fa fa-line-chart"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="block_info prix_rest_info">
+                                            <h4>Rest</h4>
+                                            <p>{{sumRest}} DH</p>
+                                            <i class="fa fa-bar-chart"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "item_date">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" value = "{{ "now"|date("d/m/Y") }}" id="today">
+                                        <div class="kalend_date"></div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="btn btn_comp" data-today = "03/04/2019">Total Caisse</div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="handl_result"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="newColumnChart"></div>
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                            <script type="text/javascript">
+                                {{ gc_draw([newColumnChart], ['newColumnChart']) }}
+                            </script>
+                            <div class="op_client_info">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>PAM</th>
+                                            <th>PAV</th>
+                                            <th>PVM</th>
+                                            <th>PVV</th>
+                                            <th>Total</th>
+                                            <th>Avance</th>
+                                            <th>Rest</th>
+                                            <th>Gain</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id = "table_clients">
+                                        {% set i = 0 %}
+                                        {% for row in statistique|batch(2, 'No item') %}
+                                            <tr>
+                                                <td>{{ row[i].date_prestation }}</td>
+                                                <td>{{ row[i].Prixachat }} MAD</td>
+                                                <td>{{ row[i + 1].Prixachat }} MAD</td>
+                                                <td>{{ row[i].prix_mont }} MAD</td>
+                                                <td>{{ row[i].prix_verre }} MAD</td>
+                                                <td>{{ row[i].prix_verre + row[i].prix_mont}} MAD</td>                                                
+                                                {% for avance in avance_array %}
+                                                    {% if avance.mont_id == row[i].id %}
+                                                        <td>{{ avance.total_avance  }} MAD</td>
+                                                        <td>{{ (row[i].prix_mont + row[i].prix_verre) - avance.total_avance  }} MAD</td>
+                                                        <td>{{ (row[i + 1].Prixachat + row[i].Prixachat) - avance.total_avance -}} MAD</td>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </tr>
+                                            {% set i = i + 2 %}
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,28 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Client:create{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+            <div class="vend_page">
+                <div class="container-fluid left_navbar">
+                    <div class="row left_navbar">
+                        <div class="col-md-2 left_navbar bk_navbar">
+                            {{ include('AppBundle::Client/menu.html.twig') }}
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form_insert">
+                                <h2 class = "title_service">Ajouter Nouveau Vendeure/se</h2>
+                                {{ form(registration_form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+    
+
+{% endblock %}

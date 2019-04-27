@@ -1,0 +1,57 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+            <div class="op_single_client_page">
+                <div class="container-fluid left_navbar">
+                    <div class="row left_navbar">
+
+                        <div class="col-md-2 left_navbar bk_navbar">
+                            {{ include('AppBundle::Client/menu.html.twig') }}
+                        </div>
+
+                        <div class="col-md-10"> 
+                            <div class="stat_client">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="block_info client_info">
+                                            <h4>Nombre Clients</h4>
+                                            <p>{{nbrclients}}</p>
+                                            <i class="fa fa-user-circle-o"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="block_info prix_total_info">
+                                            <h4>Prix Total</h4>
+                                            <p>{{sumTotal}} DH</p>
+                                            <i class="fa fa-calculator"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="block_info prix_avance_info">
+                                            <h4>Avance</h4>
+                                            <p>{{sumAvance}} DH</p>
+                                            <i class="fa fa-line-chart"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="block_info prix_rest_info">
+                                            <h4>Rest</h4>
+                                            <p>{{sumRest}} DH</p>
+                                            <i class="fa fa-bar-chart"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+
+{% endblock %}

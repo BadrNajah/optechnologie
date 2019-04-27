@@ -1,0 +1,67 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Client:create{% endblock %}
+
+{% block body %}
+
+	<div id="fullpage">
+		<div class="section">
+            <div class="vend_page">
+                <div class="container-fluid left_navbar">
+                    <div class="row left_navbar">
+                        {% if app.user %}
+                            <a href="{{ logout_path('main') }}" class = "text-right">Logout</a>
+                        {% endif %}
+                        <div class="col-md-2 left_navbar bk_navbar">
+                        
+                            {{ include('AppBundle::Client/menu.html.twig') }}
+
+                        </div>
+                        <div class="col-md-10">
+                        
+                            <div class="op_add_client">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a href="{{url('addusers')}}" class = "btn btn-success">Add Utilisateur</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" placeholder = "Search" id="search_client">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="op_deconnect">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="op_client_info">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Utilisateur</th>
+                                            <th>Email</th>
+                                            <th colspan="2">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id = "table_clients">
+                                        {% for member in members %}
+                                            <tr>
+                                                <td>{{ member.username }}</td>
+                                                <td>{{ member.email }}</td>
+                                                <td style = "width:100px;"><a href="{{url('edituser',{id:member.id})}}" class = "btn btn_edit_color">Modifier<i class="fa fa-edit" aria-hidden="true"></i></a></td>
+                                                <td style = "width:100px;"><a href="{{url('deleteuser',{id:member.id})}}" class = "btn btn_edit_delete">Supprimer <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+    
+{% endblock %}
